@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2.5% 0% 2.5%;
+    z-index: 9999;
+    box-shadow: 0px 25px 2px 1px rgb(0, 0, 0);
+
+    .nav{
+        display: flex;
+        align-items: center;
+
+        .nav-item-sign{
+            position: relative;
+        }
+    }
+
+    .sign-in-menu{
+        position: absolute;
+        top: 80px;
+        right: 25px;
+        z-index: 9999;
+        display: grid;
+        background-color: aqua;
+        padding: 25px 10px;
+        border-radius: 20px;
+    }
+
+   .nav-item{
+    padding: 0 10px 0 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    }
+
+    img{
+        width: 100px;
+    }
+}
+

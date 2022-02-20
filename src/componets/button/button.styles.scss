@@ -1,0 +1,17 @@
+.custom_button{
+    min-width: 200px;
+    width: auto;
+    height: 40px;
+    padding: 0 25px 0 25px;
+    background-color: #FFB000	;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 20px;
+
+    &:hover{
+        background-color: rgb(255, 145, 0)	;
+    }
+}
