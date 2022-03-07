@@ -13,18 +13,23 @@ import { setCurrentUser } from "../../redux/user/user.action";
 
 import { addToFirestore } from "../../firebase/firestore/firestore";
 import { createUser, signIn } from "../../firebase/firebase_google";
+import { useNavigate } from "react-router";
+import Main from "../../pages/main/main";
 
 
 const SignUp = () => {
+    // Hooks
     const [user, setUser] = useState({})
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 // Sign up and sign in with google
     const signInUpWithGoogle = async() => { 
         initializeApp(firebaseConfig);
         await signInWithPopup(getAuth(), new GoogleAuthProvider()).then((result) => {
             dispatch(setCurrentUser(result.user))
-            addToFirestore(result.user)
+            addToFirestore(result.user);
+            navigate(`/main`);
         })
     }
 
@@ -45,7 +50,7 @@ const SignUp = () => {
         } else {
             await createUser(email,password);
             await dispatch(setCurrentUser(displayName, email));
-            addToFirestore(user)
+            await addToFirestore(user);
         }
     }
 

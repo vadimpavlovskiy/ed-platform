@@ -10,8 +10,6 @@ export const addToFirestore = async (data) => {
     const {displayName, email, uid} = data;
     const createAt = new Date();
 
-    console.log(email);
-
     await setDoc(doc(db, 'users', `${uid}`),{
         displayName: displayName,
         email: email,

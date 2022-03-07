@@ -9,13 +9,18 @@ import { Input } from "../input/input.component";
 
 import './header.styles.scss';
 import { signIn } from "../../firebase/firebase_google";
+import { useNavigate } from "react-router";
+import { setCurrentUser } from "../../redux/user/user.action";
 
 const Header = () => {
-
+    
+    // Hooks
     const [user, setUser] = useState({});
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
     const hidden = useSelector(state => state.signin.showSignIn)
+
 
 
     const handleChange = (event) => {
@@ -29,8 +34,15 @@ const Header = () => {
 
         const {email, password} = user;
 
-        await signIn(email, password); 
-
+        try {
+            await signIn(email, password);
+            await dispatch(setCurrentUser(email));
+            await navigate(`/main`);
+        }
+        catch{
+            alert('Email or password is incorrect!')
+        }
+        
         // handleSubmit is working, but add uid when write to firebase
     }
 
@@ -54,7 +66,7 @@ const Header = () => {
                                     <input type="checkbox" />
                                     <span>Remember me</span>
                                 </div>
-                                <Button>Sign In</Button>
+                                <Button><span onClick={()=> navigate(`/main`)}> Sign In</span></Button>
                             </form>
                     </div>
                     : ''}                   
