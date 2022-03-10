@@ -16,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={ <Homepage />} />
           <Route path="/signup" element={ <SignUpPage /> } />
-          <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
+          {/* <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} /> */}
+          <Route path="/main" element={<Main />} /> {/* Made for test, after configuration replace to below */}
         </Routes>
     </div>
   );
