@@ -12,9 +12,8 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../redux/user/user.action";
 
 import { addToFirestore } from "../../firebase/firestore/firestore";
-import { createUser, signIn } from "../../firebase/firebase_google";
+import { createUser } from "../../firebase/firebase_google";
 import { useNavigate } from "react-router";
-import Main from "../../pages/main/main";
 
 
 const SignUp = () => {
@@ -42,7 +41,7 @@ const SignUp = () => {
     const handleSubmit = async event => {
         event.preventDefault();
 
-        const {displayName, email, password, confirmpassword} = user
+        const {displayName, email, password} = user
 
         if(user.password !== user.confirmpassword){
             alert("Password don't match!")

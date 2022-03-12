@@ -4,12 +4,18 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    border-radius: 0 10px 10px 0;
-    background-color: #0640fe;
+    border-radius: 0 15px 15px 0;
+    background-color: #0C1228;
     color: white;
     font-family: "Lato";
 
-    .controller-logo {
-        width: 20%;
+    .controller-items{
+        height: 75vh;
+    }
+
+    .controller-header {
+        margin-top: 5vh;
+        height: 20vh;
+        margin-left: 20px;
     }
 }

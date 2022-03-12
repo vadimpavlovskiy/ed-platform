@@ -8,16 +8,15 @@ import { Navigate } from 'react-router';
 import SignUpPage from './pages/sign-up/sign-up';
 import Main from './pages/main/main';
 
+
 function App() {
   const user = useSelector(state => state.currentUser.currentUser);
-  
   return (
     <div className='container'>
         <Routes>
-          <Route path="/" element={ <Homepage />} />
+          <Route path="/" element={user ? <Navigate to = "/main" /> : <Homepage />} />
           <Route path="/signup" element={ <SignUpPage /> } />
-          {/* <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} /> */}
-          <Route path="/main" element={<Main />} /> {/* Made for test, after configuration replace to below */}
+          <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
         </Routes>
     </div>
   );
