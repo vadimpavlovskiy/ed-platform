@@ -19,7 +19,10 @@ const ControllerMenu = () => {
         {
             toggleController ? 
             <div className={toggleController ? "" : 'controller-menu'}>
-                <h1 className="controller-header">EDTECH</h1>
+                <div className="controller-header">
+                    <img onClick={()=>dispatch(setController())} src={hamburger} alt="" />
+                    <h1>EDTECH</h1>
+                </div>
                 <div className="controller-items">
                     {items.map((item, index)=> {return <div><DropdownItem unreadMesseges={item.unreadMessages} onClick={()=>dispatch(setStatus(item))} id={item.id} isSelected={item.isSelected} key={index} title={item.title} /> </div>})}
                 </div>
