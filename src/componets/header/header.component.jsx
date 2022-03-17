@@ -66,7 +66,7 @@ const Header = () => {
                                     <input type="checkbox" />
                                     <span>Remember me</span>
                                 </div>
-                                <Button><span onClick={()=> navigate(`/main`)}> Sign In</span></Button>
+                                <Button><span onClick={()=>navigate(`/main`)}> Sign In</span></Button>
                             </form>
                     </div>
                     : ''}                   
