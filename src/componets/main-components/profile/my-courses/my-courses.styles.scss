@@ -1,0 +1,65 @@
+.my-courses {
+    width: 100%;
+    margin: 100px 40px;
+    font-size: 14px;
+
+    .my-courses-header{
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .my-courses-list{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .my-courses-item{
+            flex-direction: column;
+            background-color: rgb(12, 18, 20);
+            cursor: pointer;
+            border-radius: 15px;
+            color: white;
+            margin: 30px 40px 0 0;
+            width: 40%;
+            height: 450px;
+            align-items: center;
+    
+            .my-courses-image{
+               
+                display: flex;
+                justify-content: center;
+                img{
+                    border-radius: 10px 10px 10px 10px;
+                    width: 80%;    
+                }
+                
+            }
+    
+            .my-courses-name{
+                font-weight: bold;
+                font-size: 18px;
+                padding: 10% 5% 5% 10%;
+            }
+            
+            .my-courses-item:hover{
+                background-color: rgb(19, 24, 39);
+            }
+            .my-courses-desc{
+                width: 80%;
+                padding: 5% 5% 5% 10%;
+            }
+            .my-courses-teacher {
+                color: rgb(180, 180, 180);
+                width: 80%;
+                padding: 0% 5% 5% 10%;
+                font-size: 12px;
+                font-style: italic;
+            }
+            .my-courses-rate{
+                font-size: 12px;
+                padding: 0% 5% 5% 10%;
+            }
+    }
+    
+    }
+    
+}

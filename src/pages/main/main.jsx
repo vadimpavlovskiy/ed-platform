@@ -6,8 +6,8 @@ import { Profile } from "../../componets/main-components/profile/profile.compone
 const Main = () => {
     return (
         <div className="main">
-           <ControllerMenu />
-           <Profile />
+            <ControllerMenu />
+            <Profile />
         </div>
     )
 }
