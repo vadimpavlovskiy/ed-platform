@@ -4,11 +4,12 @@ import { firebaseConfig } from "../firebase.config";
 import {doc,setDoc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 
-export const addToFirestore = async (data) => {
+export const addToFirestore = async (data, displayName) => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
 
-    const {displayName, email, uid} = data;
+    
+    const {email, uid} = data;
     const createAt = new Date();
 
     await setDoc(doc(db, 'users', `${uid}`),{

@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../redux/user/user.action";
 
 import { addToFirestore } from "../../firebase/firestore/firestore";
-import { createUser } from "../../firebase/firebase_google";
+import { createUser, signIn } from "../../firebase/firebase_google";
 import { useNavigate } from "react-router";
 
 
@@ -47,9 +47,9 @@ const SignUp = () => {
             alert("Password don't match!")
             return
         } else {
-            await createUser(email,password);
-            await dispatch(setCurrentUser(displayName, email));
-            await addToFirestore(user);
+            await createUser(email,password, displayName);
+            await signIn(email, password);
+            navigate(`/main`)
         }
     }
 

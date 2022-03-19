@@ -32,7 +32,7 @@ function App() {
     <div className='container'>
         <Routes>
           <Route path="/" element={user ? <Navigate to = "/main" /> : <Homepage />} />
-          <Route path="/signup" element={ <SignUpPage /> } />
+          <Route path="/signup" element={user ? <Navigate to="/main" /> :<Navigate to="/"/> } />
           <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
         </Routes>
     </div>
