@@ -1,19 +1,27 @@
-.profile-top {
-    width: 85%;
+.navigation-top {
+    width: 100%;
+    height: 15vh;
+    background-color: #0c1214;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 0;
     display: flex;
-    margin-left: 40px;
-    .profile-greeting {
+    .navigation-greeting {
+        cursor: pointer;
         margin: 0;
+        font-size: 40px;
+        font-weight: bold;
         font-family: "Lato";
         color: white;
+        padding-left: 50px;
     }
-    .profile-settings {
+    .navigation-settings {
         display: flex;
         position: relative;
         align-items: center;
+        padding-right: 50px;
 
-    .profile-setting-notification{
+    .navigation-setting-notification{
         position: relative;
         cursor: pointer;
         border-radius: 50px;
@@ -25,13 +33,13 @@
             padding: 0 auto;
         }
     }
-    .profile-setting-notification:hover {
+    .navigation-setting-notification:hover {
         background-color: #141b2b;
     }
-    .profile-setting-notification:active{
+    .navigation-setting-notification:active{
         background-color: #1f2841;
     }
-    .profile-setting-notification-number{
+    .navigation-setting-notification-number{
         color: white;
         padding: 2px 10px 2px 10px;
         left: 15%;
@@ -42,7 +50,7 @@
         z-index: 9999;
     }
 
-    .profile-setting-icon {
+    .navigation-setting-icon {
         cursor: pointer;
         border-radius: 50px;
 
@@ -52,13 +60,13 @@
             padding: 0 auto;
         }
     }
-    .profile-setting-icon:hover {
+    .navigation-setting-icon:hover {
         background-color: #141b2b;
     }
-    .profile-setting-icon:active {
+    .navigation-setting-icon:active {
         background-color: #1f2841;
     }    
-    .profile-setting-user{
+    .navigation-setting-user{
         border-radius: 50px;
         cursor: pointer;
 
@@ -68,13 +76,13 @@
             margin: 0 auto;
         }
     }
-    .profile-setting-user:hover{
+    .navigation-setting-user:hover{
         background-color: #141b2b;
     }
-    .profile-setting-user:active{
+    .navigation-setting-user:active{
         background-color: #1f2841;
     }
-    .profile-setting-toggled {
+    .navigation-setting-toggled {
         display: grid;
         background-color: rgb(12, 18, 20);
         border-radius: 15px;

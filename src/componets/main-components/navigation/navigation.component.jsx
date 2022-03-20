@@ -1,12 +1,12 @@
 import React from "react";
 import MyCourses from "./my-courses/my-courses.component";
-import { ProfileTop } from "./profile-top/profile-top.component";
-import './profile.styles.scss';
+import { NavigationTop } from "./navigation-top/navigation-top.component";
+import './navigation.styles.scss';
 
-export const Profile = () => {
+export const Navigation = () => {
    return ( 
        <div className="profile">
-            <ProfileTop />
+            <NavigationTop />
             <MyCourses />
        </div>
        

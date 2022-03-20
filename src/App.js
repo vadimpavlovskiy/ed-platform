@@ -13,6 +13,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './firebase/firebase.config';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { ProfilePage } from './pages/profile/profile';
 
 
 function App() {
@@ -32,8 +33,9 @@ function App() {
     <div className='container'>
         <Routes>
           <Route path="/" element={user ? <Navigate to = "/main" /> : <Homepage />} />
-          <Route path="/signup" element={user ? <Navigate to="/main" /> :<Navigate to="/"/> } />
+          <Route path="/signup" element={user ? <Navigate to="/main" /> : <SignUpPage /> } />
           <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
+          <Route path='/profile' element={user ? <ProfilePage /> : <Navigate to="/" />} />
         </Routes>
     </div>
   );
