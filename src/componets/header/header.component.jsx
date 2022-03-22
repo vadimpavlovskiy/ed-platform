@@ -36,7 +36,6 @@ const Header = () => {
 
         try {
             await signIn(email, password);
-            await dispatch(setCurrentUser(email));
             await navigate(`/main`);
         }
         catch{
