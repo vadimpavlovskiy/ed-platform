@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 import { firebaseConfig } from "../firebase.config";
-import {doc,getDoc,setDoc} from 'firebase/firestore';
+import {doc,getDoc,setDoc, updateDoc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 
 export const addToFirestore = async (data, displayName) => {
@@ -30,16 +30,13 @@ export const getUserData = async (uid) => {
     const docSnap = await getDoc(docRef)
     return await docSnap.data();
 }
-export const setUserData = async (data, createdAt, uid) => {
+export const setUserData = async (data, uid) => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
 
-    
-    const {email, displayName, headline} = data;
-
-    await setDoc(doc(db, 'users', `${uid}`), {
-        displayName: displayName,
-        email: email,
-        headline: headline,
-    })
+    for (const [key, value] of Object.entries(data)) {
+        await updateDoc(doc(db, 'users', `${uid}`), {
+           [key]: value 
+        })
+      }
 }

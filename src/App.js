@@ -14,6 +14,8 @@ import { firebaseConfig } from './firebase/firebase.config';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { ProfilePage } from './pages/profile/profile';
+import { getUserData } from './firebase/firestore/firestore';
+import { setProfileInfo } from './redux/profile/profile.action';
 
 
 function App() {
@@ -25,8 +27,11 @@ function App() {
     const db = getFirestore();
     const auth = getAuth();
 
-    auth.onAuthStateChanged(user => dispatch(setCurrentUser(user)))
-  }, [user])
+    auth.onAuthStateChanged(async(user) => {
+      await dispatch(setCurrentUser(user));
+      await getUserData(user.uid).then(result => dispatch(setProfileInfo(result))); 
+    })
+  }, [])
   
 
   return (

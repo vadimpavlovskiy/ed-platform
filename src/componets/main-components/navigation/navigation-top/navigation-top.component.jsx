@@ -13,7 +13,7 @@ export const NavigationTop = () => {
        <div onClick={()=> navigate('../main')} className="navigation-greeting">EDTECH</div>
         <div className="navigation-settings">
             <div className="navigation-setting-notification"><img src={notificactionIcon} style={{height: "24px", width: "24px"}} alt="" /><div className="navigation-setting-notification-number">1</div></div>
-            <div className="navigation-setting-icon"><img src={settingIcon} style={{height: "24px", width: "24px"}} alt="" /></div>
+            <div onClick={signOutFromApp} className="navigation-setting-icon"><img src={settingIcon} style={{height: "24px", width: "24px"}} alt="" /></div>
             <div onClick={()=>navigate('../profile')}className="navigation-setting-user"><img src={profileIcon} style={{height: "24px"}} alt="" /></div>
         </div>
     </div>
