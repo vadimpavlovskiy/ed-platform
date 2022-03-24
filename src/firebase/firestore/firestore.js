@@ -30,12 +30,15 @@ export const getUserData = async (uid) => {
     const docSnap = await getDoc(docRef)
     return await docSnap.data();
 }
-export const setUserData = async (data, uid) => {
+
+
+// setUserData allow you to add new data or update data in profile
+export const setUserData = async (data, document, uid) => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
 
     for (const [key, value] of Object.entries(data)) {
-        await updateDoc(doc(db, 'users', `${uid}`), {
+        await updateDoc(doc(db, document, `${uid}`), {
            [key]: value 
         })
       }

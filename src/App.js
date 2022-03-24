@@ -16,10 +16,13 @@ import { getAuth } from 'firebase/auth';
 import { ProfilePage } from './pages/profile/profile';
 import { getUserData } from './firebase/firestore/firestore';
 import { setProfileInfo } from './redux/profile/profile.action';
+import { onSnapshot } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 
 
 function App() {
   const user = useSelector(state => state.currentUser.currentUser);
+  const profileInfo = useSelector(state => state.profileInfo.profileInfo)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -31,6 +34,10 @@ function App() {
       await dispatch(setCurrentUser(user));
       await getUserData(user.uid).then(result => dispatch(setProfileInfo(result))); 
     })
+
+    const unsub = onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
+      dispatch(setProfileInfo(doc.data()))
+  });
   }, [])
   
 
