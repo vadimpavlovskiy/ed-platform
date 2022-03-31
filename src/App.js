@@ -18,6 +18,7 @@ import { getUserData } from './firebase/firestore/firestore';
 import { setProfileInfo } from './redux/profile/profile.action';
 import { onSnapshot } from 'firebase/firestore';
 import { doc } from 'firebase/firestore';
+import { CoursesPage } from './pages/courses/courses-page';
 
 
 function App() {
@@ -30,12 +31,14 @@ function App() {
     const db = getFirestore();
     const auth = getAuth();
 
+    // onAuthStateChanged using for listening auth state
     auth.onAuthStateChanged(async(user) => {
       await dispatch(setCurrentUser(user));
       await getUserData(user.uid).then(result => dispatch(setProfileInfo(result))); 
     })
 
-    const unsub = onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
+    // onSnapShot using for listeng firestore changes and updating profile info
+    onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
       dispatch(setProfileInfo(doc.data()))
   });
   }, [])
@@ -47,6 +50,7 @@ function App() {
           <Route path="/" element={user ? <Navigate to = "/main" /> : <Homepage />} />
           <Route path="/signup" element={user ? <Navigate to="/main" /> : <SignUpPage /> } />
           <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
+          <Route path="/courses" element={user ? <CoursesPage/> : <Navigate to='/'/> } />
           <Route path='/profile' element={user ? <ProfilePage /> : <Navigate to="/" />} />
         </Routes>
     </div>

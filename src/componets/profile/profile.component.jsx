@@ -7,11 +7,11 @@ import { Input } from "../input/input.component";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { setUserData } from "../../firebase/firestore/firestore";
-import { setAvatarDataToDatabase, getAvatarData, setAvatar } from "../../firebase/firebase-storage/firebase-storage";
+import { setAvatar } from "../../firebase/firebase-storage/firebase-storage";
 
 export const Profile = () => {
-
     const uid = useSelector(state => state.currentUser.currentUser.uid);
+
     const profileInfo = useSelector(state => state.profileInfo.profileInfo);
 
     const [inputInfoToDatabase, setInputInfoToDatabase] = useState({})
@@ -26,8 +26,7 @@ export const Profile = () => {
 
     const onImageChange = async (e) => {
         const file = e.target.files[0];
-        await setAvatar(file, uid);
-        await setAvatarDataToDatabase(uid);
+        await setAvatar(`users`, `avatars`, file, uid);
 
     }
     return (
@@ -55,7 +54,6 @@ export const Profile = () => {
                     <Button>Sign Out</Button>
                 </div>
             </div>
-            
         </div>
     </div>
     )

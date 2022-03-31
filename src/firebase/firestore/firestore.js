@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from 'firebase/firestore';
+import {collection, getDocs, getFirestore, query} from 'firebase/firestore';
 import { firebaseConfig } from "../firebase.config";
 import {doc,getDoc,setDoc, updateDoc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
@@ -43,3 +43,16 @@ export const setUserData = async (data, document, uid) => {
         })
       }
 }
+
+export const getCourses = async () => {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+    const querySnapshot = await getDocs(collection(db, `courses`));
+    const test = []
+    await querySnapshot.forEach(doc=>{
+        test.push(doc.data())
+    })
+    return test; 
+
+    }      
