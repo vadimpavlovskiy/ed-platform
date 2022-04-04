@@ -1,0 +1,28 @@
+.current-course-container {
+    margin: 5% 5% 5% 5%;
+    width: 90%;
+
+    .current-course{
+        width: 100%;
+        display: flex;
+
+        .current-course-image{
+            display: flex;
+            width: 50%;
+            img{
+                border-radius: 25px;
+                width: 90%
+            }
+        }
+        .current-course-author-span{
+            font-style: italic;
+        }
+        .current-course-title {
+            padding-top: 2%;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    }
+
+    
+}

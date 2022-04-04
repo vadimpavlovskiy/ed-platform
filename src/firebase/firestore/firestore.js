@@ -23,10 +23,10 @@ export const checkStatus = async() => {
     const db = getFirestore();
     const auth = getAuth();
 }
-export const getUserData = async (uid) => {
+export const getData = async (collection, uid) => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore()
-    const docRef = doc(db, 'users', uid);
+    const docRef = doc(db, collection, uid);
     const docSnap = await getDoc(docRef)
     return await docSnap.data();
 }
@@ -51,8 +51,10 @@ export const getCourses = async () => {
     const querySnapshot = await getDocs(collection(db, `courses`));
     const test = []
     await querySnapshot.forEach(doc=>{
-        test.push(doc.data())
+        test.push({
+            id: doc.id,
+            data: doc.data()
+        })
     })
     return test; 
-
-    }      
+}      

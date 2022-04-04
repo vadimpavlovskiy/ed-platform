@@ -21,7 +21,11 @@
         align-items: center;
         padding-right: 50px;
 
-    .navigation-setting-notification{
+    .navigation-setting-courses{
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .navigation-setting-shopping{
         position: relative;
         cursor: pointer;
         border-radius: 50px;
@@ -33,10 +37,10 @@
             padding: 0 auto;
         }
     }
-    .navigation-setting-notification:hover {
+    .navigation-setting-shopping:hover {
         background-color: #141b2b;
     }
-    .navigation-setting-notification:active{
+    .navigation-setting-shopping:active{
         background-color: #1f2841;
     }
     .navigation-setting-notification-number{

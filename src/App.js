@@ -14,10 +14,11 @@ import { firebaseConfig } from './firebase/firebase.config';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { ProfilePage } from './pages/profile/profile';
-import { getUserData } from './firebase/firestore/firestore';
+import { getData } from './firebase/firestore/firestore';
 import { setProfileInfo } from './redux/profile/profile.action';
 import { onSnapshot } from 'firebase/firestore';
 import { doc } from 'firebase/firestore';
+import { CoursePage } from './pages/course/course-page';
 import { CoursesPage } from './pages/courses/courses-page';
 
 
@@ -34,7 +35,7 @@ function App() {
     // onAuthStateChanged using for listening auth state
     auth.onAuthStateChanged(async(user) => {
       await dispatch(setCurrentUser(user));
-      await getUserData(user.uid).then(result => dispatch(setProfileInfo(result))); 
+      await getData('users',user.uid).then(result => dispatch(setProfileInfo(result))); 
     })
 
     // onSnapShot using for listeng firestore changes and updating profile info
@@ -48,10 +49,11 @@ function App() {
     <div className='container'>
         <Routes>
           <Route path="/" element={user ? <Navigate to = "/main" /> : <Homepage />} />
-          <Route path="/signup" element={user ? <Navigate to="/main" /> : <SignUpPage /> } />
-          <Route path="/main" element={user ? <Main /> : <Navigate to="/"/>} />
-          <Route path="/courses" element={user ? <CoursesPage/> : <Navigate to='/'/> } />
-          <Route path='/profile' element={user ? <ProfilePage /> : <Navigate to="/" />} />
+          <Route path="signup" element={user ? <Navigate to="/main" /> : <SignUpPage /> } />
+          <Route path="main" element={user ? <Main /> : <Navigate to="/"/>} />
+          <Route path="courses" element={user ? <CoursesPage/> : <Navigate to='/'/> } />
+          <Route path="courses/:itemid" element={<CoursePage />}/>
+          <Route path='profile' element={user ? <ProfilePage /> : <Navigate to="/" />} />
         </Routes>
     </div>
   );
