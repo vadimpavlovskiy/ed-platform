@@ -21,7 +21,7 @@ export const Courses = () => {
         getInfo();
 
         return () => {
-            dispatch(setCourses(null))
+            dispatch(setCourses([]))
         }
     }, [])
     

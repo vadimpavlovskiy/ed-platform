@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
-import {collection, getDocs, getFirestore, query} from 'firebase/firestore';
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
 import { firebaseConfig } from "../firebase.config";
 import {doc,getDoc,setDoc, updateDoc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
+import { documentId } from "firebase/firestore";
 
 export const addToFirestore = async (data, displayName) => {
     const app = initializeApp(firebaseConfig);
@@ -58,3 +59,20 @@ export const getCourses = async () => {
     })
     return test; 
 }      
+export const getMyCourses = async (id) => {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+    const querySnapshot = await getDocs(collection(db, `courses`),where(documentId(), '==', id));
+    const test = []
+    querySnapshot.forEach((doc) => {
+        if(id === doc.id){
+            test.push({
+                id: doc.id,
+                data: doc.data()
+            })
+        }
+        // doc.data() is never undefined for query doc snapshots
+      });
+      return test
+}

@@ -19,8 +19,14 @@
         }
     }
     .courses-item-desc{
+        display: grid;
         margin: 15px 0;
         font-size: 14px;
+
+        .courses-item-desc-show{
+            cursor: pointer;
+            font-size: 16px;
+        }
     }
     .courses-item-author {
         font-size: 12px;

@@ -1,27 +1,83 @@
 .current-course-container {
-    margin: 5% 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
+    font-family: 'Lato';
     width: 90%;
+    height: 100vh;
+    background-color: #141b2b;
 
     .current-course{
-        width: 100%;
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
 
+        
         .current-course-image{
             display: flex;
             width: 50%;
             img{
                 border-radius: 25px;
-                width: 90%
+                width: 90%;
+                height: 100%;
             }
         }
-        .current-course-author-span{
-            font-style: italic;
+        .current-course-info{
+            display: grid;
+            width: 40%;
+
+            .current-course-author{
+                padding-top: 5%;
+                .current-course-author-span{
+                    font-style: italic;
+                }
+            }
+            
+            .current-course-rate{
+                font-weight: bold;
+                color: orange;
+                padding-top: 5%;
+            }
+            .current-course-title {
+                padding-top: 2%;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .current-course-price{
+                display: flex;
+                align-items: center;
+                font-size: 24px;
+                padding-top: 2%;
+
+                .current-course-btn{
+                    padding-left: 10%;
+                }
+    
+                .current-course-price-span{
+                    font-weight: bold;
+                }
+            }
+            
         }
-        .current-course-title {
-            padding-top: 2%;
-            font-size: 28px;
+        .current-course-desc{
+            width: 100%;
+            font-size: 16px;
+            padding-top: 3%;
+            padding-bottom: 3%;
+
+            .current-course-desc-title {
+                font-weight: bold;
+                font-size: 22px;
+                padding-bottom: 2%;
+            }
+            
+            .current-course-desc-content{
+                width: 60%;
+            }
+        }
+        .current-course-content-title{
             font-weight: bold;
-        }
+            font-size: 22px;
+            padding-bottom: 2%;
+        } 
     }
 
     

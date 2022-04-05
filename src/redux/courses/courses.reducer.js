@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    courses: null,
+    courses: [],
     currentCourse: null
 }
 
@@ -14,6 +14,11 @@ export const coursesReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 currentCourse: action.payload
+            }
+        case "SET_MY_COURSES":
+            return {
+                ...state,
+                courses: state.courses.concat(action.payload)
             }
             default:
                 return state;

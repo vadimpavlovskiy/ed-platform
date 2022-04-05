@@ -1,35 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router";
+import Button from "../../../button/button.component";
 import './my-courses.styles.scss';
-import logo from '../../../../assets/react-native.png'
 
-const MyCourses = () => {
+const MyCourses = ({id, author,description,image,name}) => {
+    const navigate = useNavigate()
     return (
-        <div className="my-courses">
-            <div className="my-courses-header">My courses</div>
-            <div className="my-courses-list">
+
                 <div className="my-courses-item">
-                    <div className="my-courses-name">React Native for Beginners</div>
-                    <div className="my-courses-image"><img src={logo} alt="" /></div>
-                    <div className="my-courses-desc">The modern React course for beginners! React, Redux, own big project</div>
-                    <div className="my-courses-teacher">by Will Smith, Brad Pitt, Margot Robbie</div>
-                    <div className="my-courses-rate">Rate is here</div>
+                    <div onClick={() => navigate(`../courses/${id}`)} className="my-courses-name">{name}</div>
+                    <div onClick={() => navigate(`../courses/${id}`)} className="my-courses-image"><img src={image} alt="" /></div>
+                    <div onClick={() => navigate(`../courses/${id}`)} className="my-courses-desc">{description.substr(0,100)}...</div>
+                    <div onClick={() => navigate(`../courses/${id}`)} className="my-courses-teacher">{author}</div>
                 </div>
-                <div className="my-courses-item">
-                    <div className="my-courses-name">React Native for Beginners</div>
-                    <div className="my-courses-image"><img src={logo} alt="" /></div>
-                    <div className="my-courses-desc">The modern React course for beginners! React, Redux, own big project</div>
-                    <div className="my-courses-teacher">by Will Smith, Brad Pitt, Margot Robbie</div>
-                    <div className="my-courses-rate">Rate is here</div>
-                </div>
-                <div className="my-courses-item">
-                    <div className="my-courses-name">React Native for Beginners</div>
-                    <div className="my-courses-image"><img src={logo} alt="" /></div>
-                    <div className="my-courses-desc">The modern React course for beginners! React, Redux, own big project</div>
-                    <div className="my-courses-teacher">by Will Smith, Brad Pitt, Margot Robbie</div>
-                    <div className="my-courses-rate">Rate is here</div>
-                </div>
-            </div>
-        </div>
     )
 }
 export default MyCourses;
