@@ -12,6 +12,7 @@ import { CourseContent } from "./course-content/course-content";
 export const Course = () => {
     const param = useParams();
     const currentCourse = useSelector(state => state.courses.currentCourse);
+    const courses_id = useSelector(state => state.profileInfo.profileInfo)
     const dispatch = useDispatch();
     const getInfo = async () => {
         await getData('courses', param.itemid).then(res => {return dispatch(setCurrentCourse(res))})
@@ -36,10 +37,19 @@ export const Course = () => {
                         <div className="current-course-title">{currentCourse.publicinfo.name}</div>
                         <div className="current-course-author">Created by: <span className="current-course-author-span">{currentCourse.publicinfo.author}</span></div>
                         <div className="current-course-rate">{currentCourse.publicinfo.rate}: <Rating allowHover={false} initialValue={currentCourse.publicinfo.rate} /></div>
-                        <div className="current-course-price">
-                            Price: <span className="current-course-price-span">{currentCourse.publicinfo.price} $</span>
-                            <div className="current-course-btn"><Button>Add to the card</Button></div>
-                        </div>
+                        {courses_id.users_courses.courses_id.map((item) => {
+                            if(item === param.itemid) {
+                                return 
+                            } else {
+                                <div className="current-course-price">
+                                    Price: <span className="current-course-price-span">{currentCourse.publicinfo.price} $</span>
+                                <div className="current-course-btn">
+                                    <Button>Add to the card</Button>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        )}
                     </div>
                     <div className="current-course-desc">
                         <div className="current-course-desc-title">Description: </div>

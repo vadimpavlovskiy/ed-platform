@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import './courses-item.scss';
 
 export const CoursesItem = ({id, name, imageUrl, description, rate, author, price}) => {
+
     const [desc_lenght, setDescLenght] = useState(100)
     const navigate = useNavigate();
     return (

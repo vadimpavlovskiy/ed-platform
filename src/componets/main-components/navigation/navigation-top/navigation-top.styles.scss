@@ -91,13 +91,22 @@
         display: grid;
         background-color: rgb(12, 18, 20);
         border-radius: 15px;
-        right: 0;
-        top: 110%;
+        right: 15%;
+        top: 100%;
         margin: 0;
         position: absolute;
+        .navigation-setting-toggled-item{
+            display: flex;
+            align-items: center;
+            img{
+                padding: 0;
+                height: 18px;
+                margin-right: 5px;
+            }
+        }
         *{
             font-size: 14px;
-            padding: 20px;
+            padding: 10px 20px;
             cursor: pointer;
             color: white;
             margin: 0;
