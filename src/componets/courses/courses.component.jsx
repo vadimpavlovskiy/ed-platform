@@ -4,7 +4,7 @@ import { getCourses, getUserData } from "../../firebase/firestore/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { setCourses } from "../../redux/courses/courses.action";
 import { useEffect } from "react";
-import { CoursesItem } from "./courses-item/courses-item";
+import { CoursesItem } from "./courses-item/courses-item.component";
 import { useLocation } from "react-router";
 import { Loading } from "../loading/loading.component";
 

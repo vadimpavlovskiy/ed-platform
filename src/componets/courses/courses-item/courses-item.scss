@@ -1,5 +1,6 @@
 .courses-item{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(12, 18, 20);
     border-radius: 50px;
     margin: 50px;
@@ -7,11 +8,13 @@
     width: 21%;
     
     .courses-item-title{
+        cursor: pointer;
         font-size: 18px;
         font-weight: bold;
     }
 
     .courses-item-image{
+        cursor: pointer;
         margin: 25px 0;
         img{
             border-radius: 25px;

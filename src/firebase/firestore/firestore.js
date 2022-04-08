@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
+import {arrayRemove, arrayUnion, collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
 import { firebaseConfig } from "../firebase.config";
 import {doc,getDoc,setDoc, updateDoc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
@@ -44,6 +44,23 @@ export const setUserData = async (data, document, uid) => {
         })
       }
 }
+
+export const setWishlist = async (data, document, uid) => {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+     const isExist = await getData(document, uid);
+     
+     if(isExist.wishlist === undefined || !isExist.wishlist.includes(data)){
+        return await updateDoc(doc(db, document, `${uid}`),{
+            wishlist: arrayUnion(data)
+        });
+     } else {
+            return await updateDoc(doc(db,document,`${uid}`), {
+                wishlist: arrayRemove(data)
+            })
+     }
+    }
 
 export const getCourses = async () => {
     const app = initializeApp(firebaseConfig);

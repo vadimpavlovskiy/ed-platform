@@ -1,0 +1,66 @@
+.wishlist{
+    padding: 4%;
+    background-color: #141b2b;
+
+    .wishlist-title{
+        font-family: "Lato";
+        font-size: 26px;
+        font-weight: bold;
+    }
+    .wishlist-courses{
+        width: 100%;
+        gap: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        .my-courses-item{
+            flex-direction: column;
+            background-color: rgb(12, 18, 20);
+            border-radius: 15px;
+            color: white;
+            width: 40%;
+            margin: 3% 0;
+            height: 500px;
+            align-items: center;
+    
+            .my-courses-image{
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                img{
+                    border-radius: 10px 10px 10px 10px;
+                    width: 80%;    
+                }
+                
+            }
+    
+            .my-courses-name{
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 18px;
+                margin: 10% 5% 5% 10%;
+            }
+            
+            .my-courses-item:hover{
+                background-color: rgb(19, 24, 39);
+            }
+            .my-courses-desc{
+                cursor: pointer;
+                width: 80%;
+                margin: 5% 5% 5% 10%;
+            }
+            .my-courses-teacher {
+                cursor: pointer;
+                color: rgb(180, 180, 180);
+                width: 80%;
+                margin: 0% 5% 5% 10%;
+                font-size: 12px;
+                font-style: italic;
+            }
+            .my-courses-rate{
+                font-size: 12px;
+                margin: 0% 5% 5% 10%;
+            }
+    }
+
+}
+}

@@ -17,7 +17,7 @@ export const CoursesItem = ({id, name, imageUrl, description, rate, author, pric
         </div>
         <div className="courses-item-author">{author}</div>
         <div className="courses-item-numb">
-            <div className="courses-item-price">{price}$</div>
+            <div className="courses-item-price">{price}$ </div>
             <div className="courses-item-btn"><Button>Add To Card</Button></div> 
         </div>
     </div>
