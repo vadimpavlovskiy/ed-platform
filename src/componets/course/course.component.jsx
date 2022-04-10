@@ -8,13 +8,14 @@ import { Rating } from 'react-simple-star-rating'
 import { Loading } from "../loading/loading.component";
 import Button from "../button/button.component";
 import { WishlistButton } from "../wishlist-button/wishlist-button.component";
+import { setCartList } from "../../firebase/firestore/firestore";
 
 export const Course = () => {
     const param = useParams();
 
     const currentCourse = useSelector(state => state.courses.currentCourse);
     const profileinfo = useSelector(state => state.profileInfo.profileInfo);
-    
+
     const uid = useSelector(state => state.currentUser.currentUser);
 
     const dispatch = useDispatch();
@@ -26,8 +27,9 @@ export const Course = () => {
 
     useEffect(() => {
          getInfo();
+         
          return () => {
-             dispatch(setCurrentCourse(null))
+             setCurrentCourse([])
          }
     }, [])
 
@@ -41,16 +43,18 @@ export const Course = () => {
                         <div className="current-course-author">Created by: <span className="current-course-author-span">{currentCourse.publicinfo.author}</span></div>
                         <div className="current-course-rate">
                             {currentCourse.publicinfo.rate}: <Rating allowHover={false} initialValue={currentCourse.publicinfo.rate} />
+                            {profileinfo.user_courses.includes(param.itemid) ? '' :
                             <div className="curremt-course-wishlist">
                                <WishlistButton wishlist={profileinfo.wishlist.includes(param.itemid)} userid={uid.uid} courseid={param.itemid}/>
                            </div>
+}
                         </div>
-                        {profileinfo.users_courses.courses_id.includes(param.itemid)
+                        {profileinfo.user_courses.includes(param.itemid)
                             ? ''
                             :
                             <div className="current-course-price">
                                     Price: <span className="current-course-price-span">{currentCourse.publicinfo.price} $</span>
-                                    <div className="current-course-btn">
+                                    <div onClick={()=> setCartList(param.itemid, currentCourse.publicinfo.price, `users`, uid.uid)} className="current-course-btn">
                                         <Button>Add to the card</Button>
                                     </div>
                             </div> 

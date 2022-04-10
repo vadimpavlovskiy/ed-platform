@@ -21,6 +21,7 @@ import { doc } from 'firebase/firestore';
 import { CoursePage } from './pages/course/course-page';
 import { CoursesPage } from './pages/courses/courses-page';
 import { WishlistPage } from './pages/wishlist/wishlist-page';
+import { CartPage } from './pages/cart/cart-page';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route path="courses" element={user ? <CoursesPage/> : <Navigate to='/'/> } />
           <Route path="courses/:itemid" element={<CoursePage />}/>
           <Route path='profile' element={user ? <ProfilePage /> : <Navigate to="/" />} />
+          <Route path='profile/cart' element={user ? <CartPage/> : <Navigate to='/' />} />
           <Route path='profile/wishlist' element={user ? <WishlistPage /> : <Navigate to="/"/>}/>
         </Routes>
     </div>

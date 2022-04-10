@@ -1,0 +1,48 @@
+.cart-content-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(12, 18, 20);
+    padding: 2%;
+    border-radius: 20px;
+    width: 90%;
+    height: 80%;
+    .content-item-image{
+        width: 30%;
+        img{
+            border-radius: 20px;
+            width: 100%;
+        }
+    }
+    .content-item-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 100%;
+        margin-left: 5%;
+        .content-item-title{
+            font-size: 20px;
+            height: 20%;
+            font-family: "Lato";
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .content-item-desc{
+            align-items: center;
+            padding-top: 5%;
+            height: 50%;
+        }
+        .content-item-author{
+            height: 20%;
+            font-style: italic;
+        }
+    }
+    .content-item-price{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-size: 26px;
+        width: 25%;
+    }
+}

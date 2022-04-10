@@ -1,0 +1,47 @@
+.cart {
+    background-color: #141b2b;
+    min-height: 100vh;
+    .cart-title{
+        font-size: 26px;
+        font-weight: bold;
+        font-family: "Lato";
+        text-transform: uppercase;
+        padding: 4%;
+    }
+
+    .cart-content{
+        display: flex;
+        width: 100%;
+
+        .cart-content-items{
+            display: grid;
+            gap: 4%;
+            width: 70%;
+            margin-left: 4%;
+            height: 100%;
+        }
+        .cart-content-total-amount{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 20%;
+            height: 51vh;
+            border-radius: 20px;
+            background-color: rgb(12, 18, 20);
+
+            .cart-content-total-text{
+                font-size: 26px;
+            }
+            .cart-content-total-price{
+                padding-top: 20%;
+                font-family: "Lato";
+                font-weight: bold;
+                font-size: 36px;
+            }
+            .cart-content-total-checkout{
+                padding-top: 20%;
+            }
+        }
+    }
+}

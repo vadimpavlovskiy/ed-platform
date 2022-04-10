@@ -15,7 +15,7 @@ export const NavigationTop = () => {
     const navigate = useNavigate();
 
     const selector = useSelector(state => state.dropdownList.toggleController);
-    const avatarUrl = useSelector(state => state.profileInfo.profileInfo.avatarUrl)
+    const profileinfo = useSelector(state => state.profileInfo.profileInfo)
 
     const handleNavigate = (url) => {
         navigate(url)
@@ -32,11 +32,11 @@ export const NavigationTop = () => {
    <div className="navigation-top">
        <div onClick={()=>handleNavigate(`../main`)} className="navigation-greeting">EDTECH</div>
         <div className="navigation-settings">
-            <div className="navigation-setting-shopping"><img src={shoppingIcon} style={{height: "24px", width: "24px"}} alt="" />
-                <div className="navigation-setting-notification-number">1</div>
+            <div onClick={()=>handleNavigate('../profile/cart')} className="navigation-setting-shopping"><img src={shoppingIcon} style={{height: "24px", width: "24px"}} alt="" />
+                <div className="navigation-setting-notification-number">{profileinfo.cart ? profileinfo.cart.length ? profileinfo.cart.length : 0 : 0}</div>
             </div>
             <div onClick={signOutFromApp} className="navigation-setting-icon"><img src={settingIcon} style={{height: "24px", width: "24px"}} alt="" /></div>
-            <div onClick={()=>dispatch(setController())} className="navigation-setting-user"><img src={avatarUrl} style={{height: "24px"}} alt="" /></div>
+            <div onClick={()=>dispatch(setController())} className="navigation-setting-user"><img src={profileinfo.avatarUrl} style={{height: "24px"}} alt="" /></div>
             {selector ?
                 <div className="navigation-setting-toggled">
                         <div onClick={()=>handleNavigate('../profile')} className="navigation-setting-toggled-item" >

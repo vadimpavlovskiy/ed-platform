@@ -14,8 +14,6 @@ export const WishList = () => {
     const profileinfo = useSelector(state => state.profileInfo.profileInfo);
 
     const courses = useSelector(state=> state.courses.courses);
-
-    console.log(courses);
     
     useEffect(() => {
       profileinfo.wishlist.map((item) => getMyCourses(item).then(res => dispatch(setMyCourses(res))))
@@ -35,7 +33,7 @@ export const WishList = () => {
                     courses.length > 0 ? 
                     courses.map((item,index) => {return <MyCourses author={item.data.publicinfo.author} description={item.data.publicinfo.description} image={item.data.publicinfo.imageUrl} name={item.data.publicinfo.name} key={index} id={item.id}/>}) 
                 :
-                <Loading/>
+                <div className="wishlistempty">Wishlist is empty!</div>
                 }
             </div>
         </div>

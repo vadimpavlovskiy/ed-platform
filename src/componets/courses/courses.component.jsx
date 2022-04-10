@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import './courses.styles.scss';
-import { getCourses, getUserData } from "../../firebase/firestore/firestore";
+import { getCourses, getUserData, setCartList } from "../../firebase/firestore/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { setCourses } from "../../redux/courses/courses.action";
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ export const Courses = () => {
 
     const dispatch = useDispatch();
     const courses = useSelector(state => state.courses.courses);
-    
+
     useEffect(() => {
         const getInfo = async () => {
             await getCourses().then(res =>{dispatch(setCourses(res)) })

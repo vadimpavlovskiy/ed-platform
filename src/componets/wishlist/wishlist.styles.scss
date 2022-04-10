@@ -12,6 +12,15 @@
         gap: 10%;
         display: flex;
         flex-wrap: wrap;
+
+        .wishlistempty {
+            width: 100%;
+            font-size: 34px;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .my-courses-item{
             flex-direction: column;
             background-color: rgb(12, 18, 20);

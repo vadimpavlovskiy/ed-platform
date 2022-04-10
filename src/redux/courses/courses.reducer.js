@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     courses: [],
-    currentCourse: null
+    currentCourse: null,
+    amount: null
 }
 
 export const coursesReducer = (state = INITIAL_STATE, action) => {
@@ -19,6 +20,11 @@ export const coursesReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 courses: state.courses.concat(action.payload)
+            }
+        case "CALCULATE_AMOUNT":
+            return{
+                ...state,
+                amount: state.amount + action.payload
             }
             default:
                 return state;

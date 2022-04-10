@@ -10,3 +10,7 @@ export const setMyCourses = (courses) => ({
     type: "SET_MY_COURSES",
     payload: courses
 })
+export const calculateAmount = (price) => ({
+    type: "CALCULATE_AMOUNT",
+    payload: price
+})

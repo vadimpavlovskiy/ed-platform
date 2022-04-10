@@ -61,7 +61,27 @@ export const setWishlist = async (data, document, uid) => {
             })
      }
     }
+export const setCartList = async (id, price, document, uid) => {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
 
+    const isExist = await getData(document, uid);
+
+        if( isExist.user_courses === undefined || !isExist.user_courses.includes(id)){
+            return await updateDoc(doc(db, document, `${uid}`),{
+                cart: arrayUnion(
+                    {
+                        price: price,
+                        id: id
+                    }
+                )
+            });
+        }
+        else{
+            alert ("You already bought this course! ")
+        }
+     
+}
 export const getCourses = async () => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();

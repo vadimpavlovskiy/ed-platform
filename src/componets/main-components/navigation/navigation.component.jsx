@@ -10,9 +10,10 @@ import './navigation.styles.scss';
 export const Navigation = () => {
     const dispatch = useDispatch()
     const courses = useSelector(state => state.profileInfo.profileInfo);
-    const courses_list = useSelector(state => state.courses.courses)
+    const courses_list = useSelector(state => state.courses.courses);
+
     useEffect(() => {
-        courses.users_courses.courses_id.map(item => getMyCourses(item).then(res => dispatch(setMyCourses(res))))
+        courses.user_courses.map(item => getMyCourses(item).then(res => dispatch(setMyCourses(res))))
 
         return () => {
             dispatch(setCourses([]))
