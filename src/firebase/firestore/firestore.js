@@ -80,7 +80,26 @@ export const setCartList = async (id, price, document, uid) => {
         else{
             alert ("You already bought this course! ")
         }
-     
+}
+export const deleteFromCartList = async (id, price, document, uid) => {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+    const isExist = await getData(document, uid);
+
+        if( isExist.user_courses === undefined || !isExist.user_courses.includes(id)){
+            await updateDoc(doc(db, document, `${uid}`),{
+                cart: await arrayRemove(
+                    {
+                        price: price,
+                        id: id
+                    }
+                )
+            });
+        }
+        const isModified = await getData(document, uid);
+        return isModified;
+    
 }
 export const getCourses = async () => {
     const app = initializeApp(firebaseConfig);

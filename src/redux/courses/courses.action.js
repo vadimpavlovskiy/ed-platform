@@ -14,3 +14,6 @@ export const calculateAmount = (price) => ({
     type: "CALCULATE_AMOUNT",
     payload: price
 })
+export const resetAmount = () => ({
+    type: "RESET_AMOUNT"
+})

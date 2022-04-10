@@ -43,6 +43,13 @@
         justify-content: center;
         align-items: center;
         font-size: 26px;
+        height: 100%;
         width: 25%;
+        .content-item-remove{
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: underline;
+            color: #FFB000;
+        }
     }
 }

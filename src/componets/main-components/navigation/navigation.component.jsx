@@ -13,7 +13,10 @@ export const Navigation = () => {
     const courses_list = useSelector(state => state.courses.courses);
 
     useEffect(() => {
-        courses.user_courses.map(item => getMyCourses(item).then(res => dispatch(setMyCourses(res))))
+        if(courses.user_courses !== undefined){
+            courses.user_courses.map(item => getMyCourses(item).then(res => dispatch(setMyCourses(res))))
+        }
+        
 
         return () => {
             dispatch(setCourses([]))
@@ -30,7 +33,7 @@ export const Navigation = () => {
                             courses_list.length > 0 ? 
                                 courses_list.map((item,index) => {return <MyCourses author={item.data.publicinfo.author} description={item.data.publicinfo.description} image={item.data.publicinfo.imageUrl} name={item.data.publicinfo.name} key={index} id={item.id}/>}) 
                             :
-                            <Loading/>
+                            <div>You dont have courses</div>
                         }
                     </div>
                 </div>

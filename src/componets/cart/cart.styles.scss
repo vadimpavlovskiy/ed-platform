@@ -44,4 +44,13 @@
             }
         }
     }
+    .cart-content-empty{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 36px;
+        font-weight: bold;
+        height: 50vh;
+    }
 }

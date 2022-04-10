@@ -26,6 +26,11 @@ export const coursesReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 amount: state.amount + action.payload
             }
+        case "RESET_AMOUNT":
+            return{
+                ...state,
+                amount: null
+            }
             default:
                 return state;
     }

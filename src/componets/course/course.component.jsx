@@ -43,7 +43,7 @@ export const Course = () => {
                         <div className="current-course-author">Created by: <span className="current-course-author-span">{currentCourse.publicinfo.author}</span></div>
                         <div className="current-course-rate">
                             {currentCourse.publicinfo.rate}: <Rating allowHover={false} initialValue={currentCourse.publicinfo.rate} />
-                            {profileinfo.user_courses.includes(param.itemid) ? '' :
+                            {profileinfo.user_courses.includes(param.itemid) !== undefined ? '' :
                             <div className="curremt-course-wishlist">
                                <WishlistButton wishlist={profileinfo.wishlist.includes(param.itemid)} userid={uid.uid} courseid={param.itemid}/>
                            </div>
