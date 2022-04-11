@@ -2,7 +2,6 @@ import React from "react";
 import './cart.item.component.styles.scss';
 
 export const CartItem = ({id, handleSubmit, useruid, name, image, description, author, price}) => {
-    
     return (
         <div className="cart-content-item">
                     <div className="content-item-image"><img src={image} alt={name} /></div>

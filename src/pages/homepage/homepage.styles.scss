@@ -2,8 +2,8 @@
     display: grid;
     width: 100%; 
     z-index: 0;
-    height: 700px;
-    background-image: url(../../assets/wrapper.jpg);
+    height: 100vh;
+    background-image: url(../../assets/wrapper.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11,18 +11,22 @@
     .wrapper-heading {
         display: grid;
         flex-direction: column;
+        font-family: "Lato";
         align-items: flex-start;
-        justify-content: center;
         align-content: center;
-        background-color: #053ffeb3;
+        background-color: #040E2F;
         height: 30%;
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         margin: 12% 0 0 6%;
+        width: 35%;
         padding: 50px 50px;
         border-radius: 20px;
+        text-transform: uppercase;
 
         .wrapper-title{
+            font-weight: bold;
+            text-transform: uppercase;
             margin: 0;
             padding: 0;
         }

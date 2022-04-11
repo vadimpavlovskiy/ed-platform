@@ -1,7 +1,7 @@
 import React from "react";
 import SignUp from "../../componets/sign-up/sign-up.component";
 
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/student.jpg'
 
 import './sign-up.styles.scss'
 

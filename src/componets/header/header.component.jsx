@@ -47,7 +47,7 @@ const Header = () => {
 
     return (
         <div className="header">
-                <img src={logo} alt="" />
+                <div className="nav-title">EDTECH</div>
                 <div className="nav">
                     <div className="nav-item">
                         WHO WE ARE

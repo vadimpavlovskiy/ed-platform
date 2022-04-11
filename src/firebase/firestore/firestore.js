@@ -16,7 +16,11 @@ export const addToFirestore = async (data, displayName) => {
     await setDoc(doc(db, 'users', `${uid}`),{
         displayName: displayName,
         email: email,
-        createAt: createAt
+        createAt: createAt,
+        user_courses: [],
+        cart: [],
+        wishlist: [],
+        avatarUrl: `https://firebasestorage.googleapis.com/v0/b/pet-project-2f874.appspot.com/o/avatars%2Fprofile-icon.svg?alt=media&token=7736fe94-3b1e-433b-a21e-4fbf64d3530e`,
     })
 }
 export const checkStatus = async() => {

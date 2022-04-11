@@ -13,7 +13,7 @@ import { setCurrentUser } from "../../redux/user/user.action";
 
 import { addToFirestore } from "../../firebase/firestore/firestore";
 import { createUser, signIn } from "../../firebase/firebase_google";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 
 
 const SignUp = () => {
@@ -28,7 +28,7 @@ const SignUp = () => {
         await signInWithPopup(getAuth(), new GoogleAuthProvider()).then((result) => {
             dispatch(setCurrentUser(result.user))
             addToFirestore(result.user);
-            navigate(`/main`);
+            <Navigate to='/main' />
         })
     }
 
@@ -72,7 +72,7 @@ const SignUp = () => {
             <input type="password" className="input" onChange={handleChange} name="confirmpassword"placeholder="Confirm Password" required/>
             <Button type="submit">SIGN UP</Button>
         </form>
-        <span className="subtitle">Already have an account? Log In </span>
+        <span className="subtitle">Already have an account? <span onClick={()=> navigate(`/main`)}>Log In</span> </span>
         </div>
     </div>
 )

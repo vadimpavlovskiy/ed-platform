@@ -57,7 +57,7 @@ export const Cart = () => {
                     </div>
             </div>
             </div>
-            : <div className="cart-content-empty">YOUR CARD IS EMPTY</div>}
+            : cart.length === 0 ? <div className="cart-content-empty">YOUR CARD IS EMPTY</div>  : <div className="cart-content-empty">Loading...</div>}
         </div>
     )
 }

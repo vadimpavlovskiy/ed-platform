@@ -10,8 +10,8 @@ const Homepage = () => {
         <Header/>
         <div className="wrapper">
             <div className="wrapper-heading">
-                <h1 className="wrapper-title">FIND YOUR PET WITH US</h1>
-                <div className="wrapper-desc">Social network for lost & shared pets. <br/>Let's find your friend together.</div>
+                <h1 className="wrapper-title">EdTech platform for everyone</h1>
+                <div className="wrapper-desc">Platform for everyone. <br />Let's educate with us!</div>
                 <Link to="/signup"><Button>SIGN UP</Button></Link>
             </div>
         </div>

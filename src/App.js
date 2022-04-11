@@ -41,9 +41,12 @@ function App() {
     })
 
     // onSnapShot using for listeng firestore changes and updating profile info
-    onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
-      dispatch(setProfileInfo(doc.data()))
-  });
+    if(user !== null){
+      onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
+        dispatch(setProfileInfo(doc.data()))
+    })
+    }
+    
   }, [])
   
 

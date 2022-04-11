@@ -29,12 +29,16 @@
             text-transform: uppercase;
         }
         .content-item-desc{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
             align-items: center;
             padding-top: 5%;
-            height: 50%;
+            height: 30%;
         }
         .content-item-author{
             height: 20%;
+            padding-top: 5%;
             font-style: italic;
         }
     }
