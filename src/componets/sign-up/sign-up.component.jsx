@@ -25,10 +25,9 @@ const SignUp = () => {
 // Sign up and sign in with google
     const signInUpWithGoogle = async() => { 
         initializeApp(firebaseConfig);
-        await signInWithPopup(getAuth(), new GoogleAuthProvider()).then((result) => {
-            dispatch(setCurrentUser(result.user))
-            addToFirestore(result.user);
-            <Navigate to='/main' />
+        await signInWithPopup(getAuth(), new GoogleAuthProvider()).then(async (result) => {
+            await addToFirestore(result.user, result.user.displayName)
+            await dispatch(setCurrentUser(result.user));
         })
     }
 
@@ -58,7 +57,6 @@ const SignUp = () => {
         <div className="title">
             <span className="title-heading">SIGN UP WITH</span>
             <div className="logos">
-                <div className="logo-fb"><img src={facebooklogo} className="logo" alt="" /></div> 
                 <div className="logo-gl" onClick={signInUpWithGoogle}> <img src={googlelogo} className="logo" alt="" /></div>
             </div>
             <span className="title-or">OR</span>
