@@ -30,7 +30,7 @@ export const WishList = () => {
             <div className="wishlist-title">My wishlist: </div>
             <div className="wishlist-courses">
                 {
-                    courses.length > 0 ? 
+                    courses !== undefined && courses.length > 0 ? 
                     courses.map((item,index) => {return <MyCourses author={item.data.publicinfo.author} description={item.data.publicinfo.description} image={item.data.publicinfo.imageUrl} name={item.data.publicinfo.name} key={index} id={item.id}/>}) 
                 :
                 <div className="wishlistempty">Wishlist is empty!</div>

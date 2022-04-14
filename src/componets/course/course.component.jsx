@@ -24,6 +24,9 @@ export const Course = () => {
         
         
     }
+    const test = async () => {
+        await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users/1').then(response => { return response.json(); }).then(data => { console.log(data); }).catch(error => console.log(error)); // proccess network errors })
+    }
 
     useEffect(() => {
          getInfo();
@@ -37,13 +40,13 @@ export const Course = () => {
         <div className="current-course-container">
             {currentCourse ? 
                 <div className="current-course">
-                    <div className="current-course-image"><img src={currentCourse.publicinfo.imageUrl} alt="" /></div>
+                    <div onClick={()=>test()} className="current-course-image"><img src={currentCourse.publicinfo.imageUrl} alt="" /></div>
                     <div className="current-course-info">
                         <div className="current-course-title">{currentCourse.publicinfo.name}</div>
                         <div className="current-course-author">Created by: <span className="current-course-author-span">{currentCourse.publicinfo.author}</span></div>
                         <div className="current-course-rate">
                             {currentCourse.publicinfo.rate}: <Rating allowHover={false} initialValue={currentCourse.publicinfo.rate} />
-                            {profileinfo.user_courses.includes(param.itemid) !== undefined ? '' :
+                            {profileinfo.user_courses.includes(param.itemid) === undefined ? '' :
                             <div className="curremt-course-wishlist">
                                <WishlistButton wishlist={profileinfo.wishlist.includes(param.itemid)} userid={uid.uid} courseid={param.itemid}/>
                            </div>

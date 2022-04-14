@@ -22,7 +22,6 @@ const Header = () => {
     const hidden = useSelector(state => state.signin.showSignIn)
 
 
-
     const handleChange = (event) => {
         const {value, name} = event.target;
         setUser({...user, [name]: value })

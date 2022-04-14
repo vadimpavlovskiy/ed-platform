@@ -26,21 +26,22 @@ export const Cart = () => {
         ))));
     }
     useEffect(() => {
-        cart.map((item) => getMyCourses(item.id).then(res => 
-            {dispatch(calculateAmount(res[0].data.publicinfo.price))
-            dispatch(setMyCourses(res));}
-    ))
+            cart.map((item) => getMyCourses(item.id).then(res => 
+                {dispatch(calculateAmount(res[0].data.publicinfo.price))
+                dispatch(setMyCourses(res));}
+        ))
+        
     
       return () => {
         dispatch(resetAmount())
-        dispatch(setCourses())
+        dispatch(setCourses([]))
       }
     }, [])
     
     return (
         <div className="cart">
             <div className="cart-title">Shopping List</div> 
-            {cart !== undefined && courses.length > 0 ?
+            {cart !== undefined && cart.length > 0 ?
             <div className="cart-content">
                 <div className="cart-content-items">
                 {cart !== undefined  ? courses.map((item, index) => <CartItem id={item.id} handleSubmit={handleSubmit} useruid={user_uid} author={item.data.publicinfo.author} price={item.data.publicinfo.price} description={item.data.publicinfo.description} image={item.data.publicinfo.imageUrl} name={item.data.publicinfo.name} key={index} />) : <div>Cart isn't exist!</div>}

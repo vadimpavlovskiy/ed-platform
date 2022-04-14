@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import './navigation-top.styles.scss';
-import settingIcon from "../../../../assets/settings.svg";
+import logout from "../../../../assets/logout.svg";
 import profileIcon from "../../../../assets/profile-icon.svg";
 import coursesIcon from "../../../../assets/folder.svg"
 import shoppingIcon from '../../../../assets/shopping.svg';
@@ -35,7 +35,7 @@ export const NavigationTop = () => {
             <div onClick={()=>handleNavigate('../profile/cart')} className="navigation-setting-shopping"><img src={shoppingIcon} style={{height: "24px", width: "24px"}} alt="" />
                 <div className="navigation-setting-notification-number">{profileinfo.cart !== undefined ? profileinfo.cart.length ? profileinfo.cart.length : 0 : 0}</div>
             </div>
-            <div onClick={signOutFromApp} className="navigation-setting-icon"><img src={settingIcon} style={{height: "24px", width: "24px"}} alt="" /></div>
+            <div onClick={signOutFromApp} className="navigation-setting-icon"><img src={logout} style={{height: "24px", width: "24px"}} alt="" /></div>
             <div onClick={()=>dispatch(setController())} className="navigation-setting-user"><img src={profileinfo.avatarUrl} style={{height: "24px"}} alt="" /></div>
             {selector ?
                 <div className="navigation-setting-toggled">
