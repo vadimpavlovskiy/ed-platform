@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/ed-platform/static/css/main.01d0c072.css",
-    "main.js": "/ed-platform/static/js/main.0105ffb5.js",
-    "static/media/logo.jpg": "/ed-platform/static/media/logo.7890a2354e6dd47841b2.jpg",
-    "static/media/wrapper.jpeg": "/ed-platform/static/media/wrapper.0acfd656ca5b854f2c22.jpeg",
-    "static/media/student.jpg": "/ed-platform/static/media/student.ded3cb10331b676f18ca.jpg",
-    "static/media/heart_filled.svg": "/ed-platform/static/media/heart_filled.33a2fca3b03c23780c7b6add4bb9d7d3.svg",
-    "static/media/heart.svg": "/ed-platform/static/media/heart.48317bb280525e3289c18c052033bf34.svg",
-    "static/media/logout.svg": "/ed-platform/static/media/logout.e738ac07a63e64f4c62df244dc43f1a4.svg",
-    "static/media/shopping.svg": "/ed-platform/static/media/shopping.e56de4263e01f02368b78f3628fed298.svg",
-    "index.html": "/ed-platform/index.html",
-    "static/media/folder.svg": "/ed-platform/static/media/folder.a0a84597ae4aa9a13d8329009184d509.svg",
-    "static/media/profile-icon.svg": "/ed-platform/static/media/profile-icon.74424938e320be710c007e8c200d2f77.svg",
-    "static/media/hamburger.svg": "/ed-platform/static/media/hamburger.29bdb7798fc5cacb8dfbe1d14465ffb4.svg",
-    "static/media/close.svg": "/ed-platform/static/media/close.fd1c8d1ea328d3d590f6f22bbeafc69c.svg",
-    "main.01d0c072.css.map": "/ed-platform/static/css/main.01d0c072.css.map",
-    "main.0105ffb5.js.map": "/ed-platform/static/js/main.0105ffb5.js.map"
+    "main.css": "/pet-project-2f874.firebaseapp.com/static/css/main.250872f8.css",
+    "main.js": "/pet-project-2f874.firebaseapp.com/static/js/main.28c1d3b8.js",
+    "static/media/logo.jpg": "/pet-project-2f874.firebaseapp.com/static/media/logo.7890a2354e6dd47841b2.jpg",
+    "static/media/wrapper.jpeg": "/pet-project-2f874.firebaseapp.com/static/media/wrapper.0acfd656ca5b854f2c22.jpeg",
+    "static/media/student.jpg": "/pet-project-2f874.firebaseapp.com/static/media/student.ded3cb10331b676f18ca.jpg",
+    "index.html": "/pet-project-2f874.firebaseapp.com/index.html",
+    "static/media/heart_filled.svg": "/pet-project-2f874.firebaseapp.com/static/media/heart_filled.33a2fca3b03c23780c7b6add4bb9d7d3.svg",
+    "static/media/heart.svg": "/pet-project-2f874.firebaseapp.com/static/media/heart.48317bb280525e3289c18c052033bf34.svg",
+    "static/media/logout.svg": "/pet-project-2f874.firebaseapp.com/static/media/logout.e738ac07a63e64f4c62df244dc43f1a4.svg",
+    "static/media/shopping.svg": "/pet-project-2f874.firebaseapp.com/static/media/shopping.e56de4263e01f02368b78f3628fed298.svg",
+    "static/media/folder.svg": "/pet-project-2f874.firebaseapp.com/static/media/folder.a0a84597ae4aa9a13d8329009184d509.svg",
+    "static/media/profile-icon.svg": "/pet-project-2f874.firebaseapp.com/static/media/profile-icon.74424938e320be710c007e8c200d2f77.svg",
+    "static/media/hamburger.svg": "/pet-project-2f874.firebaseapp.com/static/media/hamburger.29bdb7798fc5cacb8dfbe1d14465ffb4.svg",
+    "static/media/close.svg": "/pet-project-2f874.firebaseapp.com/static/media/close.fd1c8d1ea328d3d590f6f22bbeafc69c.svg",
+    "main.250872f8.css.map": "/pet-project-2f874.firebaseapp.com/static/css/main.250872f8.css.map",
+    "main.28c1d3b8.js.map": "/pet-project-2f874.firebaseapp.com/static/js/main.28c1d3b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.01d0c072.css",
-    "static/js/main.0105ffb5.js"
+    "static/css/main.250872f8.css",
+    "static/js/main.28c1d3b8.js"
   ]
 }
