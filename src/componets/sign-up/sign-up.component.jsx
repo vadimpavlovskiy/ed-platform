@@ -25,9 +25,10 @@ const SignUp = () => {
 // Sign up and sign in with google
     const signInUpWithGoogle = async() => { 
         initializeApp(firebaseConfig);
-        await signInWithPopup(getAuth(), new GoogleAuthProvider()).then(async (result) => {
+        signInWithPopup(getAuth(), new GoogleAuthProvider()).then(async (result) => {
             await addToFirestore(result.user, result.user.displayName)
             await dispatch(setCurrentUser(result.user));
+            await navigate(`/main`);
         })
     }
 

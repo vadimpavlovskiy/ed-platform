@@ -33,9 +33,9 @@ export const NavigationTop = () => {
        <div onClick={()=>handleNavigate(`../main`)} className="navigation-greeting">EDTECH</div>
         <div className="navigation-settings">
             <div onClick={()=>handleNavigate('../profile/cart')} className="navigation-setting-shopping"><img src={shoppingIcon} style={{height: "24px", width: "24px"}} alt="" />
-                <div className="navigation-setting-notification-number">{profileinfo.cart !== undefined ? profileinfo.cart.length ? profileinfo.cart.length : 0 : 0}</div>
+                <div className="navigation-setting-notification-number">{profileinfo.cart !== undefined ? profileinfo.cart.length  : 0 }</div>
             </div>
-            <div onClick={signOutFromApp} className="navigation-setting-icon"><img src={logout} style={{height: "24px", width: "24px"}} alt="" /></div>
+            <div onClick={()=>signOutFromApp()} className="navigation-setting-icon"><img src={logout} style={{height: "24px", width: "24px"}} alt="" /></div>
             <div onClick={()=>dispatch(setController())} className="navigation-setting-user"><img src={profileinfo.avatarUrl} style={{height: "24px"}} alt="" /></div>
             {selector ?
                 <div className="navigation-setting-toggled">

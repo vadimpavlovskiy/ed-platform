@@ -40,6 +40,7 @@ function App() {
       await getData('users',user.uid).then(result => dispatch(setProfileInfo(result))); 
     })
 
+
     // onSnapShot using for listeng firestore changes and updating profile info
     if(user !== null){
       onSnapshot(doc(db, "users", `${user.uid}`), (doc) => {
