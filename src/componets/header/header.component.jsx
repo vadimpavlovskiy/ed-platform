@@ -18,7 +18,7 @@ const Header = () => {
     // Hooks
     const [user, setUser] = useState({});
     
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 425) // For mobile menu toggler
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768) // For mobile menu toggler
     const [toggledHamburger, setToggledHamburger] = useState(false)
     const navigate = useNavigate()
 
@@ -26,7 +26,7 @@ const Header = () => {
     const hidden = useSelector(state => state.signin.showSignIn) // For sign in form
 
     const showContent = () => {
-        setIsDesktop(window.innerWidth > 425) // Reducer for menu toggler
+        setIsDesktop(window.innerWidth > 768) // Reducer for menu toggler
     }
 
     // Listener method 

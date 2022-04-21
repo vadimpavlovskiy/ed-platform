@@ -16,7 +16,7 @@
         .cart-content-items{
             display: grid;
             gap: 4%;
-            width: 70%;
+            width: 60%;
             margin-left: 4%;
             height: 100%;
         }
@@ -25,7 +25,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            width: 20%;
+            width: 30%;
             height: 51vh;
             border-radius: 20px;
             background-color: rgb(12, 18, 20);
@@ -54,7 +54,7 @@
         height: 50vh;
     }
 }
-@media screen and (min-width: 240px) and (max-width: 425px) {
+@media screen and (min-width: 240px) and (max-width: 768px) {
     .cart{
         .cart-content{
             flex-direction: column;
