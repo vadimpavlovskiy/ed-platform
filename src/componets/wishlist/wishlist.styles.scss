@@ -73,3 +73,13 @@
 
 }
 }
+@media screen and (min-width: 240px) and (max-width: 425px) {
+    .wishlist{
+        .wishlist-courses{
+            .my-courses-item{
+                height: 110%;
+                width: 100%;
+            }
+        }
+    }
+}

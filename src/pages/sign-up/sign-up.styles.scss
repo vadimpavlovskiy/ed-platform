@@ -11,3 +11,13 @@
     }
 
 }
+@media screen and (max-width: 425px ){
+    .sign-up-pg {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+    }
+    .logo_component{
+        display: none;
+    }
+}

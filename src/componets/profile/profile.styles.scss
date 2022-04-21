@@ -90,3 +90,60 @@
        }
    }
 }
+// For mobiles
+@media screen and (min-width: 240px) and(max-width: 425px) {
+    .profile-info{
+        width: 95%;
+        padding: 50px 2.5% 0 2.5%;
+        justify-items: center;
+        .profile-info-left{
+            width: 60%;
+            margin-bottom: 25px;
+            .profile-info-heading{
+                font-size: 22px;
+            }
+            .profile-info-avatar{
+                margin: 0;
+                position: relative;
+                img {
+                    width: 50px;
+                    cursor: pointer;
+                    border-radius: 50px;
+                    height: 50px;
+                }
+        }
+    }
+        .profile-info-right {
+            width: 100%;
+            .profile-info-detailed{
+                width: 50%;
+                .profile-info-displayname {
+                        display: block;
+                    width: 30%;
+                    }
+                    
+                .profile-info-email {
+                    display: block;
+                    width: 30%;
+                }
+                .profile-info-headline{
+                    display: block;
+                    width: 30%;
+                }
+
+                .profile-info-buttons{
+                    display: grid;
+                    button{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+// For tablets
+@media screen and (max-width: 768px) {
+    .profile-info{
+        display: grid;
+    }
+}

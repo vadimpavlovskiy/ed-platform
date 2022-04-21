@@ -99,3 +99,14 @@
 
     
 }
+@media screen and (max-width: 425px) {
+    .sign-up{
+        width: 100%;
+
+        .create-account {
+            .sign-up-from{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -121,3 +121,50 @@
         }
     }
 }
+@media screen and (max-width: 425px) {
+    .navigation-top {
+        display: grid;
+        justify-content: center;
+        .navigation-greeting {
+            padding: 0;
+            width: 100%;
+}
+
+        .navigation-settings{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 0;
+            .navigation-setting-shopping{
+                margin: 0;
+                .navigation-setting-notification-number{
+                    display: flex;
+                    justify-content: center;
+                    padding: 2px 5px 2px 5px;
+                }
+            }
+            .navigation-setting-icon{
+                margin: 0;
+                margin-left: 33%;
+            }
+            .navigation-setting-user{
+                margin-left: 33%;
+            }
+            .navigation-setting-user:active{
+                background-color: transparent;
+            }
+            .navigation-setting-user:hover{
+                background-color: transparent;
+            }
+            div{
+                width: 30%;
+            }
+            
+            .navigation-setting-toggled{
+                width: 100%;
+                left: 35%;
+            }
+        }
+       
+    }
+}

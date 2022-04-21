@@ -20,6 +20,10 @@
         display: flex;
         align-items: center;
 
+        .nav-items{
+            display: flex;
+            align-items: center;
+        }
         .nav-item-sign{
             position: relative;
         }
@@ -27,8 +31,8 @@
 
     .sign-in-menu{
         position: absolute;
-        top: 80px;
-        right: 25px;
+        top: 8%;
+        right: 2%;
         z-index: 9999;
         display: grid;
         background-color: #040E2F;
@@ -52,3 +56,45 @@
     }
 }
 
+@media screen and (max-width: 425px) {
+    .header{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        .nav-title{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-size: 32px;
+            padding: 10px 0;
+        }
+        .nav-hamburger{
+            display: grid;
+            justify-content: center;
+            width: 100%;
+            img{
+                width: 24px;
+                padding-bottom: 25px;
+            }
+        }
+        .nav{
+        .nav-items{
+            width: 100%;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            padding: 20px 0;
+
+            .nav-item{
+                padding: 10px 0;
+            }
+        }
+    }
+    .sign-in-menu {
+        display: grid;
+        right: 15%;
+        top: 20%;
+    }
+}
+}

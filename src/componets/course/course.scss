@@ -91,3 +91,43 @@
 
     
 }
+@media screen and (min-width: 240px) and (max-width: 425px) {
+    .current-course-container{
+        .current-course{
+            display: grid;
+            .current-course-image{
+                justify-content: center;
+                width: 100%;
+            }
+            .current-course-info{
+                justify-content: center;
+                width: 100%;
+                .current-course-rate{
+                    .curremt-course-wishlist{
+                        padding: 0;
+                        .wishlist-add{
+                            padding: 0;
+                        }
+                    }
+                }
+                .current-course-price{
+                    .current-course-btn{
+                        padding: 0;
+                    }
+                }
+                .current-course-price{
+                    font-size: 22px;
+                }
+                
+            }
+            .current-course-desc{
+                width: 100%;
+                display: grid;
+                justify-content: center;
+                .current-course-desc-content{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

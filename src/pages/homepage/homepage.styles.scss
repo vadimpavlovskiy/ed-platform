@@ -38,10 +38,44 @@
         }
 
         a{
+            max-width: 200px;
             color: white;
             text-decoration: none;
         }
     }
+}
 
-    
+@media screen and (max-width: 425px) {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        width: 100vh;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+
+        .wrapper-heading {
+            display: grid;
+            align-items: center;
+            padding: 5% 2.5% 5% 2.5%;
+            font-size: 15px;
+            width: 45%;
+            height: 40%;
+            margin: 0 0 0 2%;
+
+            .wrapper-desc{
+                width: 100%;
+                font-size: 24px;
+                margin: 50px 0 50px 0;
+            }
+            a{
+                button {
+                    font-size: 20px;
+                    min-height: 10%;
+                    min-width: 100%;
+                }
+            }
+        }
+    }
 }
